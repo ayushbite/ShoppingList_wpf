@@ -134,6 +134,13 @@ namespace ShoppingProject
             swobj.ShowDialog();
             readdb();
         }
+
+        private void user_can_buy_check(object sender, RoutedEventArgs e)
+        {
+            Product_User_Can_Buy_Window obj = new Product_User_Can_Buy_Window();
+            obj.ShowDialog();
+            readdb();
+        }
     }
   
 }

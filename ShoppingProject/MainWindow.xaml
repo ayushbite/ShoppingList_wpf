@@ -23,6 +23,7 @@
             <Button  Click="add_customer">ADD CUSTOMER</Button>
             <Button Click="save_customer_json">SAVE CUSTOMER JSON</Button>
             <Button Click="sale">SALE</Button>
+            <Button Click="user_can_buy_check">Prod_user_can_buy</Button>
         </StackPanel>
        
         <!--listbox-->

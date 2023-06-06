@@ -116,6 +116,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Product_User_Can_Buy_Window.xaml.cs">
+      <DependentUpon>Product_User_Can_Buy_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SaleWindow.xaml.cs">
       <DependentUpon>SaleWindow.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Product_User_Can_Buy_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SaleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,7 +196,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ShoppingProject_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,0 +1,28 @@
+﻿<Window x:Class="ShoppingProject.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingProject"
+        mc:Ignorable="d"
+        Title="AddProductWindow" Height="450" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Product Id:"></TextBlock>
+            <TextBox x:Name="productidbox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Product Name:"></TextBlock>
+            <TextBox x:Name="productnamebox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Product Price : "></TextBlock>
+            <TextBox x:Name="productpricebox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Product Quantity : "></TextBlock>
+            <TextBox x:Name="productqtybox" Margin="0,10,0,10"></TextBox>
+            <Button Foreground="Black" FontSize="20" Width="250"   Content="SAVE PRODUCT" Click="save_product">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

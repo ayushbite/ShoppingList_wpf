@@ -1,0 +1,35 @@
+﻿<Window x:Class="ShoppingProject.CustomerDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingProject"
+        mc:Ignorable="d"
+        Title="CustomerDetailWindow" Height="450" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Customer Id:"></TextBlock>
+            <TextBox x:Name="customeridbox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Customer Name:"></TextBlock>
+            <TextBox x:Name="customernamebox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Customer Credit"></TextBlock>
+            <TextBox x:Name="customercreditbox" Margin="0,10,0,10"></TextBox>
+            <TextBlock Text="Customer Debit"></TextBlock>
+            <TextBox x:Name="customerdebitbox" Margin="0,10,0,10"></TextBox>
+            <Button Foreground="Green" FontSize="20" Width="250"   Content="UPDATE CUSTOMER" Click="update_customer" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Foreground="Red" FontSize="20" Width="250"   Content="DELETE CUSTOMER" Margin="10" Click="delete_customer" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,99 @@
+﻿<Window x:Class="ShoppingProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoppingProject"
+        mc:Ignorable="d"
+        Title="Shopping" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--for customer-->
+        <Label Grid.Row="0" Grid.Column="0">Customers</Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <Button  Click="add_customer">ADD CUSTOMER</Button>
+            <Button Click="save_customer_json">SAVE CUSTOMER JSON</Button>
+            <Button Click="sale">SALE</Button>
+        </StackPanel>
+       
+        <!--listbox-->
+        <ListBox  Grid.Row="2" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="customer_selected" x:Name="customer_listview" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Customer Id : </Label>
+                                <TextBlock  FontSize="20" Text="{Binding Customer_Id ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Customer Name : </Label>
+                                <TextBlock Text="{Binding Customer_Name ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Customer Credit : </Label>
+                                <TextBlock Text="{Binding Customer_Credit ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Customer Debit :</Label>
+                                <TextBlock Text="{Binding Customer_Debit ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <!--for Product-->
+        <Label Grid.Row="0" Grid.Column="1">Products</Label>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button  Click="add_product" >ADD Product</Button>
+            <Button Click="save_product_json">SAVE PRODUCT JSON</Button>
+        </StackPanel>
+        
+        <!--listbox-->
+        <ListBox  Grid.Row="2" Grid.Column="1"  ScrollViewer.VerticalScrollBarVisibility="Auto"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="product_listview" SelectionChanged="product_selected"   >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Product Id :</Label>
+                                <TextBlock  FontSize="20" Text="{Binding Product_Id ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Product Name :</Label>
+                                <TextBlock Text="{Binding Product_Name ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Product price :</Label>
+                                <TextBlock Text="{Binding Product_Price ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Product Quantity :</Label>
+                                <TextBlock Text="{Binding Product_Qty ,Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+    </Grid>
+    
+</Window>

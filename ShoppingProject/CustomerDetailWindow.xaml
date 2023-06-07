@@ -9,9 +9,9 @@
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Customer Id:"></TextBlock>
-            <TextBox x:Name="customeridbox" Margin="0,10,0,10"></TextBox>
+            <TextBox  IsReadOnly="True" x:Name="customeridbox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Customer Name:"></TextBlock>
-            <TextBox x:Name="customernamebox" Margin="0,10,0,10"></TextBox>
+            <TextBox IsReadOnly="True" x:Name="customernamebox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Customer Credit"></TextBlock>
             <TextBox x:Name="customercreditbox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Customer Debit"></TextBlock>

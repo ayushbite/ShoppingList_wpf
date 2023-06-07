@@ -9,9 +9,9 @@
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Product Id:"></TextBlock>
-            <TextBox x:Name="productidbox" Margin="0,10,0,10"></TextBox>
+            <TextBox  IsReadOnly="True" x:Name="productidbox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Product Name:"></TextBlock>
-            <TextBox x:Name="productnamebox" Margin="0,10,0,10"></TextBox>
+            <TextBox  IsReadOnly="True" x:Name="productnamebox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Product Price : "></TextBlock>
             <TextBox x:Name="productpricebox" Margin="0,10,0,10"></TextBox>
             <TextBlock Text="Product Quantity : "></TextBlock>

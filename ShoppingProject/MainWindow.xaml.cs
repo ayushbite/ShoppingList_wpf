@@ -22,7 +22,7 @@ namespace ShoppingProject
         public MainWindow()
         {
             InitializeComponent();
-           customerlist = new List<CustomerModel>();
+            customerlist = new List<CustomerModel>();
             productlist = new List<ProductModel>();
             readdb();
             TotalCustomerBlock.Text = runtotalcustomer();

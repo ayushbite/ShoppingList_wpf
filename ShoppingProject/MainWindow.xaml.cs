@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ShoppingProject.Model;
 using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -24,6 +25,31 @@ namespace ShoppingProject
            customerlist = new List<CustomerModel>();
             productlist = new List<ProductModel>();
             readdb();
+            TotalCustomerBlock.Text = runtotalcustomer();
+            TotalProductBlock.Text = runtotalproduct();
+        }
+
+        private string runtotalproduct()
+        {
+            int totalproductcount = 0;
+            using (SQLiteConnection connobj = new SQLiteConnection(App.productdbpath))
+            {
+                connobj.CreateTable<ProductModel>();
+                totalproductcount = connobj.Table<ProductModel>().Count();
+            }
+            return totalproductcount.ToString();
+        }
+
+        private string runtotalcustomer()
+        {
+            int totalcustomercount = 0;
+            using (SQLiteConnection connobj = new SQLiteConnection(App.customerdbpath))
+            {
+                connobj.CreateTable<CustomerModel>();
+                totalcustomercount = connobj.Table<CustomerModel>().Count();
+            }
+            return totalcustomercount.ToString();
+
         }
 
         private void add_customer(object sender, RoutedEventArgs e)
@@ -31,6 +57,8 @@ namespace ShoppingProject
             AddCustomerWindow addcustomerobj = new AddCustomerWindow();
             addcustomerobj.ShowDialog();
             readdb();
+            TotalCustomerBlock.Text = runtotalcustomer();
+           
         }
 
         private void add_product(object sender, RoutedEventArgs e)
@@ -38,6 +66,7 @@ namespace ShoppingProject
             AddProductWindow addproductobj = new AddProductWindow();
             addproductobj.ShowDialog();
             readdb();
+            TotalProductBlock.Text = runtotalproduct();
         }
         public void readdb()
         {
@@ -75,6 +104,8 @@ namespace ShoppingProject
                 CustomerDetailWindow contactdetailwindowobj = new CustomerDetailWindow(selectedcustomer);
                 contactdetailwindowobj.ShowDialog();
                 readdb();
+                TotalCustomerBlock.Text = runtotalcustomer();
+                
             }
         }
 
@@ -87,6 +118,7 @@ namespace ShoppingProject
                 ProductDetailWindow productdetailwindowobj = new ProductDetailWindow(selectedproduct);
                 productdetailwindowobj.ShowDialog();
                 readdb();
+                TotalProductBlock.Text = runtotalproduct();
             }
 
         }

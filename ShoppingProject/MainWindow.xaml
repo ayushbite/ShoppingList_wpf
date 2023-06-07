@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShoppingProject"
         mc:Ignorable="d"
-        Title="Shopping" Height="450" Width="800">
+        WindowState="Maximized"
+       
+        Title="Shopping" Height="500" Width="1000" MinHeight="500" MinWidth="1000">
 
-    <Grid>
+
+    <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -17,37 +20,61 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <!--for customer-->
-        <Label Grid.Row="0" Grid.Column="0">Customers</Label>
+        -->
+    <!--for customer-->
+    <!--
+        <Label Grid.Row="0" Grid.Column="0" Foreground="Green">Customers</Label>
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-            <Button  Click="add_customer">ADD CUSTOMER</Button>
-            <Button Click="save_customer_json">SAVE CUSTOMER JSON</Button>
-            <Button Click="sale">SALE</Button>
-            <Button Click="user_can_buy_check">Prod_user_can_buy</Button>
+            <Button Background="#373737" Foreground="White" Content="ADD CUSTOMER" SnapsToDevicePixels="True" Click="add_customer">
+               
+            </Button>
+            <Button Background="#373737" Foreground="White" Click="save_customer_json" Content="SAVE CUSTOMER JSON" SnapsToDevicePixels="True" >
+               
+            </Button>
+            <Button Background="#373737" Foreground="White"   Content="SALE" SnapsToDevicePixels="True" Click="sale">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Background="#373737" Foreground="White" Content="Prod_user_can_buy" SnapsToDevicePixels="True" Click="user_can_buy_check" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+           
+            
+            
+
         </StackPanel>
        
-        <!--listbox-->
-        <ListBox  Grid.Row="2" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto"
+        -->
+    <!--listbox-->
+    <!--
+        <ListBox Grid.Row="2" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto"
          ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="customer_selected" x:Name="customer_listview" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Customer Id : </Label>
-                                <TextBlock  FontSize="20" Text="{Binding Customer_Id ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Green" >CUSTOMER ID : </Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Id ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Customer Name : </Label>
-                                <TextBlock Text="{Binding Customer_Name ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Green">CUSTOMER NAME : </Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Name ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Customer Credit : </Label>
-                                <TextBlock Text="{Binding Customer_Credit ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Green">CUSTOMER CREDIT : </Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Credit ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Customer Debit :</Label>
-                                <TextBlock Text="{Binding Customer_Debit ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Green">CUSTOMER DEBIT :</Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Debit ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                         </StackPanel>
 
@@ -57,14 +84,18 @@
 
         </ListBox>
 
-        <!--for Product-->
-        <Label Grid.Row="0" Grid.Column="1">Products</Label>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Button  Click="add_product" >ADD Product</Button>
-            <Button Click="save_product_json">SAVE PRODUCT JSON</Button>
+        -->
+    <!--for Product-->
+    <!--
+        <Label Grid.Row="0" Grid.Column="1" Foreground="Orange">Products</Label>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Button Background="#373737" Foreground="White"  SnapsToDevicePixels="True"  Click="add_product" >ADD Product</Button>
+            <Button Background="#373737" Foreground="White"   SnapsToDevicePixels="True" Click="save_product_json">Save Product Json</Button>
         </StackPanel>
         
-        <!--listbox-->
+        -->
+    <!--listbox-->
+    <!--
         <ListBox  Grid.Row="2" Grid.Column="1"  ScrollViewer.VerticalScrollBarVisibility="Auto"
          ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="product_listview" SelectionChanged="product_selected"   >
             <ListBox.ItemTemplate>
@@ -72,20 +103,20 @@
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                                <Label>Product Id :</Label>
-                                <TextBlock  FontSize="20" Text="{Binding Product_Id ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Orange">PRODUCT ID :</Label>
+                                <TextBlock  VerticalAlignment="Center" Text="{Binding Product_Id ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Product Name :</Label>
-                                <TextBlock Text="{Binding Product_Name ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Orange">PRODUCT NAME :</Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Product_Name ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Product price :</Label>
-                                <TextBlock Text="{Binding Product_Price ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Orange">PRODUCT PRICE :</Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Product_Price ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label>Product Quantity :</Label>
-                                <TextBlock Text="{Binding Product_Qty ,Mode=OneWay}"></TextBlock>
+                                <Label Foreground="Orange">PRODUCT QUANTITY :</Label>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Product_Qty ,Mode=OneWay}"></TextBlock>
                             </StackPanel>
                         </StackPanel>
 
@@ -95,6 +126,205 @@
 
         </ListBox>
 
+    </Grid>-->
+    <Window.Resources>
+        <Style x:Key="generictextblockstyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontStyle" Value="Normal"></Setter>
+            <Setter Property="FontWeight" Value="Medium"></Setter>
+
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontWeight" Value="UltraBlack"></Setter>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="defbtnstyle">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border 
+                             CornerRadius="20"
+                        Background="{TemplateBinding Background}"
+                            Width="{TemplateBinding Width}"
+                        Padding="{TemplateBinding Padding}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            >
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"></ContentPresenter>
+                        </Border>
+
+
+                    </ControlTemplate>
+                </Setter.Value>
+
+
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                </Trigger>
+            </Style.Triggers>
+
+
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FF6AE949">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Width="auto" Height="30" Source="Images/efflogo.png"></Image>
+            <Button Click="add_customer" Style="{DynamicResource defbtnstyle}" Grid.Row="1" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10" />
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center" ><Run Text="ADD CUSTOMER"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="sale"  Style="{DynamicResource defbtnstyle}" Grid.Row="2" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10"/>
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center"><Run Text="SALE"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="user_can_buy_check"  Style="{DynamicResource defbtnstyle}" Grid.Row="3" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10"/>
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center"><Run Text="CAN BUY"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="save_customer_json"  Style="{DynamicResource defbtnstyle}" Grid.Row="4" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10"/>
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center"><Run Text="CUS_SAVE JSON"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <TextBlock Grid.Row="5" Text="PRODUCT " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"></TextBlock>
+            <Button  Click="add_product"  Style="{DynamicResource defbtnstyle}" Grid.Row="6" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10"/>
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center"><Run Text="ADD PRODUCT"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="save_product_json"  Style="{DynamicResource defbtnstyle}" Grid.Row="7" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="Images/press.png" Width="20" Margin="10"/>
+                    <TextBlock Style="{DynamicResource generictextblockstyle}" VerticalAlignment="Center"><Run Text="PRO_SAVE JSON"/></TextBlock>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        <!--right grid-->
+        <Grid Grid.Column="1" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Background="#FF6AE949">
+                <TextBlock  HorizontalAlignment="Left" Margin="31,16,0,0" TextWrapping="Wrap" Text="TOTAL CUSTOMERS : " VerticalAlignment="Top" Foreground="White" FontSize="16" Cursor="None" FontWeight="Bold" FontFamily="Consolas"/>
+                <TextBlock x:Name="TotalCustomerBlock" HorizontalAlignment="Left" Margin="194,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="101" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Background="#FF6AE949">
+                <TextBlock HorizontalAlignment="Left" Margin="31,16,0,0" TextWrapping="Wrap" Text="TOTAL PRODUCTS : " VerticalAlignment="Top" Foreground="White" FontSize="16" Cursor="None" FontWeight="Bold" FontFamily="Consolas"/>
+                <TextBlock x:Name="TotalProductBlock" HorizontalAlignment="Left" Margin="181,9,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="31" Width="111" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" Foreground="Black"/>
+            </Grid>
+
+
+            <!--LISTVIEW FOR CUSTOMER-->
+            <!--listbox-->
+            <ListBox Grid.Row="1" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#F7E6C4"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="customer_selected" x:Name="customer_listview" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Green" >CUSTOMER ID :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Id ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Green">CUSTOMER NAME :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Name ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Green">CUSTOMER CREDIT :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Credit ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Green">CUSTOMER DEBIT :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Customer_Debit ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+            <!--LIST BOX FOR PRODUCTS-->
+            <!--listbox-->
+            <ListBox  Grid.Row="2" Grid.Column="1"  ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FFF4F4"
+         ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="product_listview" SelectionChanged="product_selected"   >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Orange">PRODUCT ID :</Label>
+                                    <TextBlock  VerticalAlignment="Center" Text="{Binding Product_Id ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Orange">PRODUCT NAME :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Product_Name ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Orange">PRODUCT PRICE :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Product_Price ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="Orange">PRODUCT QUANTITY :</Label>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Product_Qty ,Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+
+
+
+        </Grid>
+
+
     </Grid>
-    
+
 </Window>
